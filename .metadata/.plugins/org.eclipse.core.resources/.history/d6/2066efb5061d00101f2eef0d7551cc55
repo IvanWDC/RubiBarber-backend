@@ -1,0 +1,5 @@
+package com.rubi.barber.controller;
+
+public class FacturaController {
+
+}
