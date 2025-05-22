@@ -1,0 +1,39 @@
+.admin-barbers-services-content-area {
+    /* Estilos heredados del dashboard principal */
+    padding: 20px; /* Añadir padding alrededor del contenido */
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent; /* Asegurar que no tenga fondo propio, hereda del padre */
+}
+
+.admin-barbers-services-content-area .MuiTabs-root {
+    background-color: transparent; /* Quitar el fondo blanco, hereda el oscuro del padre */
+    padding: 0; /* Quitar padding horizontal aquí, ya lo tiene el contenedor padre */
+    border-radius: 0; /* Quitar bordes redondeados si hereda el fondo */
+    border-bottom: none; /* Quitar borde inferior si hereda el fondo, o ajustarlo */
+    margin-bottom: 20px; /* Añadir espacio debajo de las pestañas */
+}
+
+.admin-barbers-services-content-area .MuiTabs-indicator {
+    background-color: #d72a3c !important; /* Indicador rojo principal, usar !important para asegurar */
+}
+
+.admin-barbers-services-content-area .MuiTab-root {
+    color: #ffffff; /* Color blanco para el texto de las pestañas inactivas */
+    opacity: 0.7; /* Opcional: reducir opacidad para pestañas inactivas */
+}
+
+.admin-barbers-services-content-area .Mui-selected {
+    color: #d72a3c !important; /* Color rojo principal para la pestaña activa, usar !important */
+    font-weight: bold;
+    opacity: 1; /* Asegurar opacidad completa para pestaña activa */
+}
+
+.admin-barbers-services-content-area .MuiBox-root:has(button) {
+    margin-bottom: 20px; /* Añadir margen debajo del Box que contiene el botón Nuevo */
+}
+
+.admin-barbers-services-content-area .MuiTableContainer-root {
+    /* No necesita margin-top si el Box del botón tiene margin-bottom */
+    /* Puedes añadir margin-bottom si quieres espacio debajo de la tabla */
+} 

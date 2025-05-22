@@ -1,0 +1,133 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+.register-container {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .register-box {
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .register-logo-circle {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 16px auto;
+    border-radius: 50%;
+    background-color: #d72a3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .register-logo-inner {
+    width: 160px;
+    height: 160px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .register-logo {
+    width: 80%;
+    object-fit: contain;
+  }
+  
+  .register-title {
+    color: #d72a3c;
+    font-weight: 700;
+    font-size: 2.4rem;
+    font-family: 'Montserrat', sans-serif !important;
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+  
+  .register-form {
+    margin-top: 16px;
+  }
+  
+  .register-button {
+    margin-top: 24px !important;
+    background-color: #d72a3c !important;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: none;
+    border-radius: 8px;
+  }
+  
+  .register-button:hover {
+    background-color: #b12232 !important;
+  }
+  
+  .register-link-back {
+    margin-top: 24px;
+    font-style: italic;
+    color: #333;
+    font-size: 0.9rem;
+  }
+  
+  .register-link {
+    color: #d72a3c;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+    font-style: italic;
+  }
+  
+  .register-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  
+  @media (max-width: 480px) {
+    .register-box {
+      padding: 24px;
+      border-radius: 12px;
+    }
+  
+    .register-logo-circle {
+      width: 130px;
+      height: 130px;
+    }
+  
+    .register-logo-inner {
+      width: 110px;
+      height: 110px;
+    }
+  
+    .register-logo {
+      width: 80%;
+    }
+  
+    .register-title {
+      font-size: 1.8rem;
+    }
+  
+    .register-button {
+      font-size: 0.95rem;
+    }
+  
+    .register-link-back {
+      font-size: 0.85rem;
+      margin-top: 16px;
+    }
+  }

@@ -1,0 +1,261 @@
+.mapa-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Header styles are now largely managed by mis-citas-header class from MisCitasCliente.css */
+/* Keeping original .mapa-header as a placeholder or for potential future unique styles */
+.mapa-header {
+  /* display: flex; */ /* Removed as mis-citas-header handles this */
+  /* align-items: center; */ /* Removed as mis-citas-header handles this */
+  gap: 16px; /* Keep gap if needed, or let mis-citas-header manage */
+  margin-bottom: 0; /* Remove or adjust margin if not needed with new header */
+}
+
+/* Styles for the logo circle and logo within the header are also from MisCitasClient.css now */
+.mapa-logo-circle {
+  /* width: 60px; */
+  /* height: 60px; */
+  /* background-color: #d72a3c; */
+  /* border-radius: 50%; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.mapa-logo {
+  /* width: 40px; */
+  /* height: 40px; */
+}
+
+/* Styles for the title are now from mis-citas-title class from MisCitasClient.css */
+.mapa-title {
+  /* font-weight: bold; */
+  /* color: #333; */
+}
+
+.mapa-content-area {
+  display: flex;
+  flex-grow: 1;
+}
+
+.mapa-sidebar {
+  width: 30%;
+  overflow-y: auto;
+  background-color: white;
+  border-right: 1px solid #ddd;
+  /* padding: 16px; */ /* Moved padding to list items */
+}
+
+.mapa-sidebar .MuiTypography-h5 {
+  margin-bottom: 15px; /* Aumentar espacio debajo del título "Peluquerías Cercanas" */
+  font-weight: bold;
+}
+
+.mapa-sidebar .MuiCircularProgress-root {
+  display: block; /* Centrar el spinner */
+  margin: 20px auto;
+}
+
+.mapa-sidebar .MuiTypography-root[color="text.secondary"] {
+  text-align: center; /* Centrar mensajes de "no results" */
+  margin-top: 20px;
+}
+
+.mapa-sidebar > .MuiBox-root {
+  /* Estilos para el contenedor de cada peluquería en la lista */
+  padding: 15px; /* Más espacio interno */
+  border-bottom: 1px solid #ddd; /* Separador sutil */
+  cursor: pointer; /* Indica que es clickeable */
+  transition: background-color 0.3s ease; /* Transición suave para el hover */
+}
+
+.mapa-sidebar > .MuiBox-root:hover {
+  background-color: #f5f5f5; /* Fondo al pasar el ratón */
+}
+
+.mapa-sidebar .MuiSvgIcon-root[data-testid="StarIcon"] {
+  color: gold; /* Color para las estrellas de valoración */
+  margin-right: 5px;
+}
+
+.mapa-sidebar .MuiBox-root[mb="0"] {
+  /* Estilos para la información de distancia y valoración */
+  display: flex; /* Alinear elementos en línea */
+  align-items: center;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.mapa-sidebar .MuiBox-root[mb="0"] > *:not(:last-child) {
+  margin-right: 10px; /* Espacio entre elementos (ej: distancia y estrellas) */
+}
+
+.mapa-map-area {
+  flex-grow: 1;
+}
+
+.mapa-loading {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* White background for loading */
+}
+
+.mapa-loading .MuiCircularProgress-root {
+  color: #C62828; /* Red loading indicator */
+}
+
+.mapa-footer {
+  padding: 16px; /* Adjusted padding for consistency */
+  background-color: #333; /* Dark grey footer */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px; /* Added gap between flex items */
+}
+
+.mapa-footer .MuiTextField-root {
+  width: 80%; /* Aumentar el ancho */
+  margin-right: 10px; /* Espacio entre el input y el botón */
+  background-color: white; /* White background for input */
+  border-radius: 4px; /* Rounded corners for input */
+  /* margin-left: 16px; */ /* Removed margin to the left */
+}
+
+/* Added styles to fix TextField label alignment */
+.mapa-footer .MuiInputLabel-root {
+  color: #555; /* Style input label */
+  /* Potential adjustments for position if needed */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%) scale(1); /* Adjust vertical position and scale */
+  &.Mui-focused,
+  &.MuiFormLabel-filled {
+    transform: translateY(-50%) scale(0.75); /* Adjust for focused/filled state */
+  }
+}
+
+.mapa-footer .MuiInputBase-root {
+    /* Ensure input base has correct padding and height */
+    padding-top: 10px; /* Adjust padding as needed */
+    padding-bottom: 10px; /* Adjust padding as needed */
+}
+
+.mapa-footer .MuiInputBase-input {
+  color: #333; /* Style input text */
+  /* Potential adjustments for vertical alignment if needed */
+  padding: 0; /* Remove default input padding */
+}
+
+.mapa-footer .MuiButton-root {
+  width: 45%; /* Adjust width for footer layout */
+  background-color: #C62828; /* Red button */
+}
+
+.mapa-footer .MuiButton-root:hover {
+  background-color: #D32F2F; /* Darker red on hover */
+}
+
+.mapa-sidebar-title {
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-size: 1.8em; /* Tamaño de fuente más grande */
+    color: #333; /* Color de texto oscuro */
+    text-align: center; /* Centrar el título */
+    padding-bottom: 10px;
+    border-bottom: 2px solid #C62828; /* Línea separadora */
+}
+
+.mapa-loading-sidebar,
+.mapa-no-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px; /* Altura mínima para centrar contenido */
+}
+
+.mapa-loading-sidebar .MuiCircularProgress-root,
+.mapa-no-results .MuiTypography-root {
+    color: #C62828; /* Color rojo para spinner y texto */
+}
+
+.mapa-no-results .MuiTypography-root {
+    font-style: italic;
+}
+
+.mapa-peluqueria-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    cursor: default; /* Cambiado de pointer a default ya que ahora solo la info es clickeable */
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.mapa-peluqueria-item > div:first-child {
+    cursor: pointer; /* La información de la peluquería sigue siendo clickeable */
+}
+
+.mapa-peluqueria-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mapa-peluqueria-item .MuiButton-root {
+    background-color: #C62828;
+    color: white;
+    text-transform: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.mapa-peluqueria-item .MuiButton-root:hover {
+    background-color: #B71C1C;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mapa-peluqueria-item.MuiBox-root[bgcolor="#eeeeee"] { /* Estilo para la peluquería seleccionada */
+    background-color: #ffebee; /* Fondo rojo claro */
+    border-color: #C62828; /* Borde rojo */
+}
+
+.mapa-peluqueria-name {
+    font-size: 1.1em; /* Tamaño de fuente para el nombre */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px; /* Espacio debajo del nombre */
+}
+
+.mapa-peluqueria-address {
+    font-size: 0.9em; /* Tamaño de fuente para la dirección */
+    color: #555;
+    margin-bottom: 10px; /* Espacio debajo de la dirección */
+}
+
+.mapa-peluqueria-details {
+    display: flex;
+    justify-content: space-between; /* Distribuir espacio entre distancia y valoración */
+    align-items: center;
+    font-size: 0.9em; /* Tamaño de fuente para detalles */
+    color: #555;
+    padding-top: 10px;
+    border-top: 1px solid #eee; /* Línea separadora */
+}
+
+.mapa-peluqueria-distance,
+.mapa-peluqueria-rating {
+    display: flex;
+    align-items: center;
+}
+
+.mapa-star-icon {
+    color: #FFD700; /* Color dorado para estrellas */
+    font-size: 1.1em;
+    margin-right: 3px; /* Espacio entre estrella y número */
+}

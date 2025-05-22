@@ -1,0 +1,92 @@
+.admin-schedules-content-area {
+    padding: 20px; /* Añadir padding para separar el contenido de los bordes */
+    min-height: 300px; /* Asegurar una altura mínima para visibilidad */
+    color: #ffffff; /* Color de texto por defecto blanco para elementos heredados */
+}
+
+.admin-schedules-content-area h1, h2, h3, h4, h5, h6, p, span, label {
+    color: #ffffff; /* Asegurar que todos los elementos de texto sean blancos */
+}
+
+/* Estilos para el selector de peluquero */
+.admin-schedules-content-area .MuiFormControl-root label {
+    color: #ffffff; /* Etiqueta del selector blanca */
+}
+
+.admin-schedules-content-area .MuiInputBase-root {
+    color: #ffffff; /* Texto del input/select blanco */
+}
+
+.admin-schedules-content-area .MuiOutlinedInput-notchedOutline {
+    border-color: #ffffff !important; /* Borde del selector blanco */
+}
+
+.admin-schedules-content-area .MuiSvgIcon-root {
+    color: #ffffff; /* Iconos (como la flecha del select) blancos */
+}
+
+/* Estilos para el menú desplegable del selector */
+.MuiPaper-root .MuiMenu-list {
+    background-color: #333333; /* Fondo oscuro para las opciones del dropdown */
+}
+
+.MuiPaper-root .MuiMenuItem-root {
+    color: #ffffff; /* Texto de las opciones del dropdown blanco */
+}
+
+/* Estilos para la tabla (si aplica) */
+.admin-schedules-content-area .MuiTableContainer-root {
+    background-color: #333333; /* Fondo oscuro para el contenedor de la tabla */
+    margin-top: 20px; /* Espacio encima de la tabla */
+}
+
+.admin-schedules-content-area .MuiTableHead-root .MuiTableCell-root {
+    color: #ffffff; /* Texto de encabezados de tabla blanco */
+    background-color: #555555; /* Fondo un poco más claro para los encabezados */
+    font-weight: bold;
+}
+
+.admin-schedules-content-area .MuiTableBody-root .MuiTableRow-root {
+    /* Fondo alternado opcional para filas */
+    &:nth-of-type(odd) {
+        background-color: #444444; /* Fondo oscuro alternado */
+    }
+    &:nth-of-type(even) {
+        background-color: #333333; /* Fondo oscuro alternado */
+    }
+}
+
+.admin-schedules-content-area .MuiTableBody-root .MuiTableCell-root {
+    color: #ffffff; /* Texto de celdas de tabla blanco */
+    border-bottom: 1px solid #555555; /* Borde inferior de celda */
+}
+
+/* Estilos para botones */
+.admin-schedules-content-area .MuiButton-root {
+    margin-top: 20px; /* Espacio encima de los botones */
+}
+
+/* Ajustar colores de botones si es necesario, manteniendo el rojo principal */
+.admin-schedules-content-area .MuiButton-contained {
+    background-color: #d72a3c; /* Rojo principal */
+    color: #ffffff; /* Texto blanco */
+    &:hover {
+        background-color: #b0212e; /* Rojo más oscuro al pasar el mouse */
+    }
+}
+
+.admin-schedules-content-area .MuiButton-outlined {
+    color: #d72a3c; /* Texto rojo principal */
+    border-color: #d72a3c; /* Borde rojo principal */
+    &:hover {
+        background-color: rgba(215, 42, 60, 0.1); /* Fondo rojo translúcido al pasar el mouse */
+        border-color: #b0212e; /* Borde rojo más oscuro */
+    }
+}
+
+.admin-schedules-content-area .MuiButton-text {
+    color: #d72a3c; /* Texto rojo principal */
+    &:hover {
+        background-color: rgba(215, 42, 60, 0.1); /* Fondo rojo translúcido al pasar el mouse */
+    }
+} 

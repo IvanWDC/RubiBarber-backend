@@ -1,0 +1,269 @@
+.agenda-peluquero-root {
+    padding: 2.5rem;
+    background-color: #f8f9fa;
+}
+
+.agenda-peluquero-header {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.agenda-peluquero-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #d72a3c;
+    border-radius: 2px;
+}
+
+.agenda-peluquero-title {
+    font-weight: 900 !important;
+    color: #d72a3c !important;
+    font-size: 2.8rem !important;
+    letter-spacing: -0.5px;
+}
+
+.agenda-peluquero-logo-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #111;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.agenda-peluquero-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.agenda-peluquero-title-header {
+    color: #fff;
+    font-weight: 900;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.agenda-peluquero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.agenda-citas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.agenda-cita-item {
+    transition: all 0.3s ease;
+    border-left: 4px solid #d72a3c;
+    position: relative;
+    overflow: hidden;
+}
+
+.agenda-cita-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(215, 42, 60, 0.03), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.agenda-cita-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(215, 42, 60, 0.1);
+}
+
+.agenda-cita-item:hover::before {
+    opacity: 1;
+}
+
+.agenda-ultimas-citas {
+    margin-top: 4rem;
+    position: relative;
+    padding-top: 2rem;
+}
+
+.agenda-ultimas-citas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d72a3c, transparent);
+}
+
+.agenda-ultimas-citas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.agenda-no-citas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    gap: 1.5rem;
+    border: 1px dashed rgba(215, 42, 60, 0.2);
+}
+
+.agenda-no-citas-icon {
+    color: #d72a3c;
+    font-size: 3.5rem !important;
+    opacity: 0.8;
+}
+
+.agenda-status-badge {
+    padding: 0.5rem 1rem !important;
+    font-weight: 600 !important;
+    border-radius: 20px !important;
+}
+
+.agenda-status-badge.confirmada {
+    background-color: #e8f5e9 !important;
+    color: #2e7d32 !important;
+}
+
+.agenda-status-badge.pendiente {
+    background-color: #fff3e0 !important;
+    color: #f57c00 !important;
+}
+
+.agenda-status-badge.cancelada {
+    background-color: #ffebee !important;
+    color: #d32f2f !important;
+}
+
+.agenda-cliente-nombre {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.agenda-servicio-nombre {
+    color: #666 !important;
+    font-size: 0.95rem !important;
+}
+
+.agenda-fecha-hora {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666 !important;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .agenda-peluquero-root {
+        padding: 1.5rem;
+    }
+
+    .agenda-peluquero-title {
+        font-size: 2rem !important;
+    }
+
+    .agenda-ultimas-citas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .agenda-citas-lista {
+        gap: 1rem;
+    }
+}
+
+.agenda-peluquero-main-header {
+    width: 100%;
+    background: linear-gradient(90deg, #d72a3c 0%, #b12232 100%);
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+    min-height: 80px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    gap: 24px;
+}
+
+.agenda-peluquero-main-logo-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #111;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.agenda-peluquero-main-logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.agenda-peluquero-main-title {
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.agenda-peluquero-custom-header {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+    min-height: 80px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    gap: 24px;
+}
+
+.agenda-peluquero-custom-logo-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agenda-peluquero-custom-logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.agenda-peluquero-custom-title {
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    text-align: left;
+    color: #fff;
+} 

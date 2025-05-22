@@ -1,0 +1,200 @@
+.admin-dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #1a1a1a; /* Fondo oscuro de la aplicación */
+}
+
+.admin-dashboard-sidebar {
+    width: 250px; /* Ancho fijo de la sidebar */
+    background-color: #d72a3c; /* Fondo rojo principal para la sidebar */
+    color: #fff; /* Texto blanco */
+    padding: 20px;
+    flex-shrink: 0; /* Evita que se encoja */
+    display: flex; /* Añadido para flexbox */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center; /* Centrar elementos horizontalmente */
+}
+
+.admin-dashboard-sidebar .sidebar-logo-container {
+    margin-bottom: 30px; /* Espacio debajo del logo */
+    padding-bottom: 20px; /* Añadir padding inferior */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil */
+    width: 100%;
+    text-align: center;
+    position: relative; /* Añadido para posicionar el pseudo-elemento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-dashboard-sidebar .sidebar-logo {
+    width: 80px; /* Ajusta el tamaño del logo */
+    height: 80px; /* Hacer que sea cuadrado */
+    border-radius: 50%; /* Hacerlo circular */
+    background-color: #fff; /* Fondo blanco para el círculo */
+    border: 3px solid #000; /* Borde negro */
+    object-fit: cover; /* Asegurar que la imagen cubra el círculo */
+    padding: 10px; /* Espacio entre el borde y la imagen */
+}
+
+.admin-dashboard-sidebar Typography {
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.admin-dashboard-sidebar nav Typography {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-dashboard-sidebar nav Typography:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #d72a3c; /* Color rojo al pasar el ratón */
+}
+
+.admin-dashboard-main-content {
+    flex-grow: 1; /* Ocupa el resto del espacio */
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-dashboard-topbar {
+    background-color: #fff; /* Fondo blanco para la topbar */
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+.admin-dashboard-topbar h5 {
+    margin: 0;
+    color: #d72a3c; /* Aplicar color rojo principal al título */
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-dashboard-content-area {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto; /* Permite scroll si el contenido es largo */
+}
+
+.admin-dashboard-summary-widgets {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    /* Placeholder styles for widgets */
+    & > Box {
+        flex: 1;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        text-align: center;
+    }
+}
+
+.admin-dashboard-bottom-section {
+    display: flex;
+    gap: 30px;
+}
+
+.admin-dashboard-chart-area {
+    flex: 3; /* Ocupa 60% del espacio disponible */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.admin-dashboard-table-area {
+    flex: 2; /* Ocupa 40% del espacio disponible */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.admin-dashboard-content-area h6 {
+    margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .admin-dashboard-container {
+        flex-direction: column;
+    }
+
+    .admin-dashboard-sidebar {
+        width: 100%;
+        height: auto; /* Altura automática */
+        padding: 15px;
+        display: flex; /* Permitir layout horizontal en móvil */
+        justify-content: space-around; /* Espaciar elementos */
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+        gap: 10px;
+    }
+
+     .admin-dashboard-sidebar Typography {
+         margin-bottom: 0;
+         font-size: 0.9rem; /* Ajustar tamaño de fuente */
+     }
+
+     .admin-dashboard-sidebar nav {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 10px;
+     }
+
+     .admin-dashboard-sidebar nav Typography {
+          padding: 5px 10px;
+     }
+
+    .admin-dashboard-topbar {
+        padding: 15px 20px;
+    }
+
+    .admin-dashboard-content-area {
+        padding: 20px;
+    }
+
+    .admin-dashboard-summary-widgets {
+        flex-direction: column; /* Apilar widgets en columnas */
+        gap: 15px;
+    }
+
+    .admin-dashboard-bottom-section {
+        flex-direction: column; /* Apilar gráfica y tabla */
+        gap: 20px;
+    }
+
+    .admin-dashboard-chart-area,
+    .admin-dashboard-table-area {
+        flex: none; /* Eliminar flex-basis */
+        width: 100%; /* Ocupar todo el ancho */
+    }
+}
+
+@media (max-width: 576px) {
+    .admin-dashboard-topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .topbar-right {
+        width: 100%; /* Ocupar todo el ancho */
+        justify-content: space-between; /* Espaciar elementos */
+    }
+
+    .admin-dashboard-sidebar nav {
+        flex-direction: column;
+    }
+} 
