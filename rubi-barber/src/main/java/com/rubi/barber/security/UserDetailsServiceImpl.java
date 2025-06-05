@@ -7,12 +7,15 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.GrantedAuthority;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -26,6 +29,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         System.out.println("   Email: " + user.getEmail());
         System.out.println("   Password (hash): " + user.getPassword());
         System.out.println("   Rol: " + user.getRol());
+        logger.debug("Usuario encontrado: {}, Rol: {}", user.getEmail(), user.getRol());
 
         return new org.springframework.security.core.userdetails.User(
             user.getEmail(),

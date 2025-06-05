@@ -1,9 +1,15 @@
 package com.rubi.barber.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Usuario {
 
     @Id
@@ -20,6 +26,15 @@ public class Usuario {
     private Rol rol;
 
     private boolean activo = true;
+
+    // Nuevo campo para la URL de la imagen de perfil
+    private String imagenPerfilUrl;
+
+    // Relación con Peluqueria (si el usuario es ADMIN)
+    @OneToOne
+    @JoinColumn(name = "peluqueria_id")
+    @JsonIgnoreProperties("usuario")
+    private Peluqueria peluqueria;
 
     // Getters y setters
 
@@ -69,5 +84,22 @@ public class Usuario {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+    public Peluqueria getPeluqueria() {
+        return peluqueria;
+    }
+
+    public void setPeluqueria(Peluqueria peluqueria) {
+        this.peluqueria = peluqueria;
+    }
+
+    // Getter y setter para imagenPerfilUrl
+    public String getImagenPerfilUrl() {
+        return imagenPerfilUrl;
+    }
+
+    public void setImagenPerfilUrl(String imagenPerfilUrl) {
+        this.imagenPerfilUrl = imagenPerfilUrl;
     }
 }

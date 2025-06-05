@@ -1,5 +1,7 @@
 package com.rubi.barber.security;
 
+import com.rubi.barber.model.Usuario;
+
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.security.Key;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 
 @Service
@@ -35,13 +40,21 @@ public class JwtService {
         return claimsResolver.apply(claims);
     }
 
-    public String generateToken(String username) {
+    public String generateToken(Usuario usuario) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("rol", usuario.getRol().name());
+        claims.put("authorities", List.of("ROLE_" + usuario.getRol().name()));
         return Jwts.builder()
-                .setSubject(username)
-                .setIssuedAt(new Date())
+                .setClaims(claims)
+                .setSubject(usuario.getEmail())
+                .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
+    }
+
+    public String extractRol(String token) {
+        return extractClaim(token, claims -> claims.get("rol", String.class));
     }
 
     public boolean isTokenValid(String token, String username) {

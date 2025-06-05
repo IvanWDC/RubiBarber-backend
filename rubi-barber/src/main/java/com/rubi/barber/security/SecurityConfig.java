@@ -32,6 +32,8 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/usuarios/verificar-email/**").permitAll()
+                        .requestMatchers("/uploads/**").permitAll()
                         .requestMatchers("/api/admin/**").hasAnyRole("ADMIN", "BACKEND_ADMIN")
                         .requestMatchers("/api/peluquero/**").hasAnyRole("PELUQUERO", "ADMIN", "BACKEND_ADMIN")
                         .requestMatchers("/api/cliente/**").hasAnyRole("CLIENTE", "ADMIN", "BACKEND_ADMIN")

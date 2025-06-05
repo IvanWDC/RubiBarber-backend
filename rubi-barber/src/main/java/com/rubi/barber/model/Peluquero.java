@@ -1,10 +1,15 @@
 package com.rubi.barber.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class Peluquero {
 
     @Id
@@ -25,6 +30,7 @@ public class Peluquero {
     // Relación con peluquería
     @ManyToOne
     @JoinColumn(name = "peluqueria_id")
+    @JsonBackReference
     private Peluqueria peluqueria;
 
     // Relación con servicios que puede realizar

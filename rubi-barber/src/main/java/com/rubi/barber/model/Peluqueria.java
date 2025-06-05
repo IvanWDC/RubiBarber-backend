@@ -1,6 +1,8 @@
 package com.rubi.barber.model;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 
 @Entity
@@ -20,8 +22,14 @@ public class Peluqueria {
 
     private boolean activo = true;
 
+    // Relación con Usuario (administrador)
+    @OneToOne(mappedBy = "peluqueria", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("peluqueria")
+    private Usuario usuario;
+
     // Relación con Peluquero (una peluquería tiene muchos peluqueros)
     @OneToMany(mappedBy = "peluqueria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Peluquero> peluqueros;
 
     // ===== Getters y Setters =====
@@ -80,5 +88,13 @@ public class Peluqueria {
 
     public void setPeluqueros(List<Peluquero> peluqueros) {
         this.peluqueros = peluqueros;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

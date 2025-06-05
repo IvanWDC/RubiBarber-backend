@@ -1,6 +1,7 @@
 package com.rubi.barber.model;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Servicio {
@@ -15,6 +16,11 @@ public class Servicio {
     private int duracion; // duración en minutos
 
     private boolean activo = true;
+
+    @ManyToOne
+    @JoinColumn(name = "peluqueria_id")
+    @JsonIgnoreProperties({"usuario", "peluqueros", "servicios"})
+    private Peluqueria peluqueria;
 
     // Getters y setters
 
@@ -64,5 +70,13 @@ public class Servicio {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+    public Peluqueria getPeluqueria() {
+        return peluqueria;
+    }
+
+    public void setPeluqueria(Peluqueria peluqueria) {
+        this.peluqueria = peluqueria;
     }
 }

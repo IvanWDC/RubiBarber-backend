@@ -89,27 +89,6 @@ public class AdminController {
         return ResponseEntity.ok("Estado del peluquero actualizado correctamente");
     }
 
-    // --- Gestión de servicios ---
-
-    @GetMapping("/servicios")
-    public List<Servicio> getAllServicios() {
-        return servicioRepository.findAll();
-    }
-
-    @PostMapping("/servicio")
-    public Servicio createServicio(@RequestBody Servicio servicio) {
-        return servicioRepository.save(servicio);
-    }
-
-    @DeleteMapping("/servicio/{id}")
-    public ResponseEntity<?> deleteServicio(@PathVariable Long id) {
-        if (!servicioRepository.existsById(id)) {
-            return ResponseEntity.badRequest().body("Servicio no encontrado");
-        }
-        servicioRepository.deleteById(id);
-        return ResponseEntity.ok("Servicio eliminado correctamente");
-    }
-
     // --- Estadísticas y citas ---
 
     @GetMapping("/citas/fecha")

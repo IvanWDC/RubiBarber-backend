@@ -3,6 +3,8 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<section name="java.lang.Class">
 		<list key="findhistory">
+			<item value=".flush"/>
+			<item value="version"/>
 			<item value="super"/>
 		</list>
 	</section>
